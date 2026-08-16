@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TERAM AI | Your AI Guide to India</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #05070d;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            height: 72px;
+
+            padding: 0 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(5, 7, 13, 0.95);
+
+            border-bottom: 1px solid #151c2b;
+
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #aeb7c7;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #00d9ff;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 88vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #101d38 0%,
+                    #05070d 45%
+                );
+        }
+
+        .badge {
+
+            padding: 10px 18px;
+
+            border-radius: 30px;
+
+            border: 1px solid #1c6b88;
+
+            color: #00d9ff;
+
+            background: rgba(0, 217, 255, 0.05);
+
+            font-size: 13px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+
+            font-size: clamp(45px, 9vw, 90px);
+
+            line-height: 1;
+
+            margin-bottom: 28px;
+
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563ff,
+                    #00d9ff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero p {
+
+            max-width: 700px;
+
+            color: #8b95a7;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 38px;
+        }
+
+
+        /* ================= BUTTONS ================= */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            transition: 0.25s;
+        }
+
+        .primary {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563ff,
+                    #00bde8
+                );
+
+            box-shadow:
+                0 0 25px rgba(
+                    0,
+                    217,
+                    255,
+                    0.15
+                );
+        }
+
+        .secondary {
+
+            color: #ffffff;
+
+            background: #0d1220;
+
+            border: 1px solid #26344e;
+        }
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 30px rgba(
+                    0,
+                    217,
+                    255,
+                    0.12
+                );
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+
+            padding: 90px 7%;
+
+            background: #05070d;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+
+            font-size: 42px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+
+            color: #788398;
+
+            font-size: 16px;
+        }
+
+
+        /* ================= CARDS ================= */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+        .card {
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0d1220,
+                    #080b13
+                );
+
+            border: 1px solid #172136;
+
+            transition: 0.25s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: #2563ff;
+
+            box-shadow:
+                0 15px 40px rgba(
+                    37,
+                    99,
+                    255,
+                    0.08
+                );
+        }
+
+        .icon {
+
+            font-size: 36px;
+
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .card p {
+
+            color: #7f8a9e;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= AI SECTION ================= */
+
+        .ai-section {
+
+            padding: 100px 7%;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #0c1930,
+                    #05070d 60%
+                );
+        }
+
+        .ai-box {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 60px 25px;
+
+            border-radius: 28px;
+
+            background: #0b101c;
+
+            border: 1px solid #1c2b45;
+
+            box-shadow:
+                0 20px 70px rgba(
+                    0,
+                    0,
+                    0,
+                    0.35
+                );
+        }
+
+        .ai-box h2 {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .ai-box h2 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563ff,
+                    #00d9ff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .ai-box p {
+
+            max-width: 620px;
+
+            margin: 0 auto 32px;
+
+            color: #7f8a9e;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border-top: 1px solid #151c2b;
+
+            color: #566176;
+
+            background: #04060b;
+        }
+
+        footer strong {
+
+            color: #00d9ff;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 0 5%;
+            }
+
+            nav {
+
+                display: none;
+            }
+
+            .hero {
+
+                min-height: 82vh;
+
+                padding: 50px 20px;
+            }
+
+            .hero h1 {
+
+                font-size: 48px;
+            }
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+
+                font-size: 34px;
+            }
+
+            .ai-box h2 {
+
+                font-size: 34px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            TERAM<span> AI</span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#explore">
+                Explore
+            </a>
+
+            <a href="#ai">
+                TERAM AI
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section
+        class="hero"
+        id="home">
+
+
+        <div class="badge">
+
+            🇮🇳 AI POWERED INDIA GUIDE
+
+        </div>
+
+
+        <h1>
+
+            Discover <span>India</span>
+
+            <br>
+
+            With TERAM AI
+
+        </h1>
+
+
+        <p>
+
+            Your intelligent travel companion
+            for exploring India.
+
+            Discover destinations,
+            understand Indian culture,
+            learn about transportation
+            and plan your journey with AI.
+
+        </p>
+
+
+        <div class="buttons">
+
+
+            <a
+                href="#explore"
+                class="btn primary">
+
+                Start Exploring
+
+            </a>
+
+
+            <a
+                href="ai.html"
+                class="btn secondary">
+
+                Ask TERAM AI 🤖
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= EXPLORE ================= -->
+
+    <section
+        class="section"
+        id="explore">
+
+
+        <div class="section-title">
+
+            <h2>
+                Explore India 🇮🇳
+            </h2>
+
+            <p>
+                Everything travelers need
+                to understand India.
+            </p>
+
+        </div>
+
+
+
+        <div class="cards">
+
+
+            <!-- PLACES -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🗺️
+                </div>
+
+                <h3>
+                    Places
+                </h3>
+
+                <p>
+
+                    Discover famous cities,
+                    attractions, historical places
+                    and beautiful destinations
+                    across India.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- TRANSPORT -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🚆
+                </div>
+
+                <h3>
+                    Transport
+                </h3>
+
+                <p>
+
+                    Learn about trains,
+                    buses, metro systems,
+                    taxis and other ways
+                    to travel around India.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FOOD -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🍛
+                </div>
+
+                <h3>
+                    Food & Culture
+                </h3>
+
+                <p>
+
+                    Understand Indian food,
+                    traditions, customs
+                    and regional culture.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- MONEY -->
+
+            <div class="card">
+
+                <div class="icon">
+                    💰
+                </div>
+
+                <h3>
+                    Money
+                </h3>
+
+                <p>
+
+                    Learn the basics of
+                    Indian Rupees, payments,
+                    ATMs and everyday spending.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- LANGUAGE -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🗣️
+                </div>
+
+                <h3>
+                    Languages
+                </h3>
+
+                <p>
+
+                    Learn useful Indian words
+                    and simple phrases for
+                    your journey.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- TRAVEL -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🧳
+                </div>
+
+                <h3>
+                    Travel Tips
+                </h3>
+
+                <p>
+
+                    Get practical information
+                    to help prepare for your
+                    trip to India.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= AI ================= -->
+
+    <section
+        class="ai-section"
+        id="ai">
+
+
+        <div class="ai-box">
+
+
+            <h2>
+
+                Meet <span>TERAM AI</span> 🤖
+
+            </h2>
+
+
+            <p>
+
+                Ask questions about traveling
+                in India.
+
+                TERAM AI is designed to help
+                travelers understand India,
+                plan trips and explore new
+                destinations.
+
+            </p>
+
+
+            <a
+                href="ai.html"
+                class="btn primary">
+
+                Start Chatting →
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026
+
+        <strong>
+            TERAM AI
+        </strong>
+
+        — Your AI Guide to India 🇮🇳
+
+    </footer>
+
+
+</body>
+</html>
